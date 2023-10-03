@@ -3,6 +3,8 @@ package net.geeksbox.demo.restfulspringboot.model;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Date;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,45 +14,63 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userID;
+    private int user_ID;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "first_name")
+    private String first_name;
 
+    @Column(name = "last_name")
+    private String last_name;
+    
     @Column(name = "email")
     private String email;
-    
+    @Column(name = "is_email")
+    private Boolean is_email;
     @Column(name = "phone")
     private String phone;
-    @Column(name = "salt")
-    private String salt;
+    @Column(name = "is_phone")
+    private Boolean is_phone;
 
-    @Column(name = "hash_password")
-    private String hash_password;
+    @Column(name = "password_hash")
+    private String password_hash;
     
-    @Column(name = "role")
-    private String role;
+    @Column(name = "hash")
+    private String hash;
     
-    @Column(name = "avatar")
-    private String avatar;
+    @Column(name = "profile_picture")
+    private String profile_picture;
     
-    @Column(name = "point")
-    private float point;
+    @Column(name = "is_actived")
+    private Boolean is_actived;
 
-	public int getUserID() {
-		return userID;
+    @Column(name = "created_at")
+    private Date create_at;
+    
+    @Column(name = "updated_at")
+    private Date update_at;
+
+	public int getUser_ID() {
+		return user_ID;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setUser_ID(int user_ID) {
+		this.user_ID = user_ID;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirst_name() {
+		return first_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	public String getLast_name() {
+		return last_name;
+	}
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
 
 	public String getEmail() {
@@ -61,6 +81,14 @@ public class User {
 		this.email = email;
 	}
 
+	public Boolean getIs_email() {
+		return is_email;
+	}
+
+	public void setIs_email(Boolean is_email) {
+		this.is_email = is_email;
+	}
+
 	public String getPhone() {
 		return phone;
 	}
@@ -69,46 +97,66 @@ public class User {
 		this.phone = phone;
 	}
 
-
-	public String getSalt() {
-		return salt;
+	public Boolean getIs_phone() {
+		return is_phone;
 	}
 
-	public void setSalt(String salt) {
-		this.salt = salt;
+	public void setIs_phone(Boolean is_phone) {
+		this.is_phone = is_phone;
 	}
 
-	public String getHash_password() {
-		return hash_password;
+	public String getPassword_hash() {
+		return password_hash;
 	}
 
-	public void setHash_password(String hash_password) {
-		this.hash_password = hash_password;
+	public void setPassword_hash(String password_hash) {
+		this.password_hash = password_hash;
 	}
 
-	public String getRole() {
-		return role;
+	public String getHash() {
+		return hash;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setHash(String hash) {
+		this.hash = hash;
 	}
 
-	public String getAvatar() {
-		return avatar;
+	public String getProfile_picture() {
+		return profile_picture;
 	}
 
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
+	public void setProfile_picture(String profile_picture) {
+		this.profile_picture = profile_picture;
 	}
 
-	public float getPoint() {
-		return point;
+	public Boolean getIs_actived() {
+		return is_actived;
 	}
 
-	public void setPoint(float point) {
-		this.point = point;
+	public void setIs_actived(Boolean is_actived) {
+		this.is_actived = is_actived;
 	}
+
+	public Date getCreate_at() {
+		return create_at;
+	}
+
+	public void setCreate_at(Date create_at) {
+		this.create_at = create_at;
+	}
+
+	public Date getUpdate_at() {
+		return update_at;
+	}
+
+	public void setUpdate_at(Date update_at) {
+		this.update_at = update_at;
+	}
+
+	public User() {
+		super();
+	}
+    
     
 	
 }
